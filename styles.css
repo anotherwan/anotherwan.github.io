@@ -1,0 +1,17 @@
+.s {
+    position: absolute;
+    left: 100px;
+    top:100px;
+}
+
+.w {
+    position: absolute;
+    left: 90px;
+    top: 220px;
+}
+
+.dot {
+    position: absolute;
+    left: 340px;
+    top:310px;
+}
