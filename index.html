@@ -3,23 +3,70 @@
 <head>
     <title>Steph Wan Codes</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/ScrollMagic.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/animation.gsap.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/debug.addIndicators.js"></script>
+    <link rel="stylesheet" type="text/css" href="/styles/fonts/fonts.css" />
 </head>
 <body>
-    <div class="container">
-        <div class="s">
-            <img src="img/sw_logo_s.png" width="250">
+    <header role="banner">
+        <div class="logo-container">
+            <div class="sw">
+                <img src="img/sw_logo_sw.png" width="120">
+            </div>
+            <div class="dot">
+                <img src="img/sw_logo_dot.png" width="15" />
+            </div>
         </div>
-        <div class="w">
-            <img src="img/sw_logo_w.png" width="280" />
-        </div>
-        <div class="dot">
-            <img src="img/sw_logo_dot.png" width="30" />
-        </div>
-    </div>
+        <nav class="anchor-nav" role='navigation'>
+            <a href="#greetings" id="greetings-anchor"></a>
+            <a href="#story" id="story-anchor">story</a>
+            <a href="#work" id="work-anchor">work</a>
+            <a href="#abilities" id="abilities-anchor">abilities</a>
+            <a href="#next" id="next-anchor">next steps</a>
+        </nav>
+    </header>
+    <main class="full-screen" id="greetings" role="main">
+        <section class="full-screen blue" id="start"><div id="greet-title">Greetings</div></section>
+        <section class="full-screen orange" id="story">
+            <div id="p-container">
+                <p> Hi I'm </p>
+                <div class="s">
+                    <img src="img/sw_logo_s.png" width="40">
+                </div>
+                <p>tephanie</p>
+                <div class="w">
+                    <img src="img/sw_logo_w.png" width="60" />
+                </div>
+                <p>an.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae metus ut mauris interdum elementum eu ac elit. 
+                <!-- <div class="dot">
+                    <img src="img/sw_logo_dot.png" width="10" />
+                </div> -->
+            </div>
+        </section>
+        <section class="full-screen red" id="work">
+            <div>Design <br><br> Development</div>
+        </section>
+        <section class="full-screen blue" id="abilities">
+            <div>Abilities</div>
+        </section>
+        <section class="full-screen" id="next">
+            <div>Next Steps</div>
+        </section>
+    </main>
+
+    <!-- <script src="js/gsap/TweenMax.min.js"></script> -->
+    <!-- <script src="js/jquery.min.js"></script> -->
+    <!-- should be replaced with minified version when development is finished -->
+    <!-- <script src="js/jquery.scrollmagic.js"></script> -->
+    <!-- should be removed when development is finished -->
+    <!-- <script src="js/jquery.scrollmagic.debug.js"></script> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/plugins/CSSPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/plugins/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.3/plugins/debug.addIndicators.js"></script>
     <script src="main.js"></script>
 </body>
 </html>

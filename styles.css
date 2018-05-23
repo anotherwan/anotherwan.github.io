@@ -1,17 +1,103 @@
-.s {
-    position: absolute;
-    left: 100px;
-    top:100px;
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-.w {
+header {
+    position: fixed;
+    top:10px;
+    left: 10px;
+}
+/* 
+main {
+    display: block;
+    position: relative;
+} */
+
+section {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    text-align: center;
+    color: #000;
+
+    font-family: 'violetteregular';
+    font-size: 50px;
+    /* margin: auto; */
+    /* text-align: center; */
+    /* vertical-align: middle; */
+}
+
+.full-screen {
+    height: 100%;
+}
+
+.sw {
     position: absolute;
-    left: 90px;
-    top: 220px;
+    left: 30px;
+    top: 30px;
+}
+
+#greet-title {
+    /* text-align: center; */
+    /* align-content: center; */
+    position: relative !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
 }
 
 .dot {
     position: absolute;
-    left: 340px;
-    top:310px;
+    left: 140px;
+    top: 105px;
 }
+
+/* #greetings {
+    outline: 5px solid purple;
+}
+
+#start {
+    outline: 5px solid pink;
+} */
+
+#p-container {
+    /* visibility: hidden; */
+    font-family: sans-serif;
+    text-align: center;
+    margin: auto;
+    width: 33%;
+    font-size: 18px;
+}
+
+.s {
+    /* position: absolute; */
+    /* left:493px; */
+    /* top:1350px; */
+}
+
+.w {
+    /* position: absolute;
+    left: 488px;
+    top: 1384px; */
+}
+
+.blue {
+	background-color: #3883d8;
+}
+.red {
+	background-color: #cf3535;
+}
+.orange {
+	background-color: #ea6300;
+}
+
+/* 
+#greetings, #work, #abilities, #next {
+    font-family: 'violetteregular';
+    font-size: 50px;
+    margin: auto;
+    text-align: center;
+    vertical-align: middle;
+} */
