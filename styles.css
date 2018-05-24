@@ -2,6 +2,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    background-color: #fffdfd
 }
 
 header {
@@ -16,6 +17,7 @@ header {
     font-size: 20px;
     list-style: none;
     margin-top: 10px;
+    z-index: 999999;
 }
 
 section {
@@ -49,16 +51,19 @@ a {
     left: 90px;
     font-family: 'print_clearlyregular';
     text-decoration: none;
-    font-weight: 400;
 }
 
 a:hover {
     text-decoration-line: underline;
-   
 }
 
-a:active {
-    font-weight: bold;
+a:focus {
+    color: #8ea1e5;
+}
+
+a.active, a#greetings-anchor.active, a#story-anchor.active, a#work-anchor.active, a#abilities-anchor.active, a#next-anchor.active {
+    color: #8ea1e5;
+    font-size: 40px;
 }
 
 p {
