@@ -27,7 +27,7 @@ $(function() {
 
     var scene1 = new ScrollMagic.Scene({
         triggerElement: '#greetings',
-        duration: $(window).height(),
+        duration: $(window).height() - 100,
         triggerHook: 0.8,
         reverse:true
     })
