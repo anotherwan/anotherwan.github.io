@@ -1,4 +1,4 @@
-var controller = new ScrollMagic.Controller({
+var navController = new ScrollMagic.Controller({
   globalSceneOptions: {
     duration: $('section').height(),
     triggerHook: .025,
@@ -34,11 +34,11 @@ for(var key in scenes) {
 
     new ScrollMagic.Scene({ triggerElement: '#' + prop })
         .setClassToggle('#' + obj[prop], 'active')
-        .addTo(controller);
+        .addTo(navController);
   }
 }
 
-controller.scrollTo(function(target) {
+navController.scrollTo(function(target) {
   TweenMax.to(window, 0.5, {
     scrollTo : {
       y : target,
@@ -58,7 +58,7 @@ anchor_nav.addEventListener('click', function(e) {
   if(id !== null) {
     if(id.length > 0) {
       e.preventDefault();
-      controller.scrollTo(id);
+      navController.scrollTo(id);
 
       if(window.history && window.history.pushState) {
         history.pushState("", document.title, id);
@@ -77,7 +77,7 @@ var containerScene = new ScrollMagic.Scene({
 
 var scene1 = new ScrollMagic.Scene({
     triggerElement: '#greetings',
-    duration: $(window).height() - 100,
+    duration: $(window).height() - 20,
     triggerHook: 0.8,
     reverse:true
 })
@@ -87,16 +87,16 @@ var scene1 = new ScrollMagic.Scene({
 
 var scene2 = new ScrollMagic.Scene({
     triggerElement: '#story',
-    duration: 500
+    duration: 420
 })
 .setPin('#greet-title')
-.addTo(controller);
+.addTo(pinController);
 
 var blockTween = new TweenMax.to(".s", 5, {
     x:0,
     y:0,
     rotation:90,
-    delay:1,
+    delay:5,
     scale:1,
     ease:Power4.easeOut
 });
