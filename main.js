@@ -72,31 +72,47 @@ var containerScene = new ScrollMagic.Scene({
   triggerElement: '#story'
 })
 .setTween(blockTween)
-.addIndicators()
+// .addIndicators()
 .addTo(pinController);
 
 var scene1 = new ScrollMagic.Scene({
     triggerElement: '#greetings',
-    duration: $(window).height() - 20,
-    triggerHook: 0.8,
+    duration: $(window).height() + 50,
+    triggerHook: 0.7,
     reverse:true
 })
 .setPin('#greet-title')
-.addIndicators()
+// .addIndicators()
 .addTo(pinController);
 
 var scene2 = new ScrollMagic.Scene({
     triggerElement: '#story',
-    duration: 420
+    duration: 280
 })
 .setPin('#greet-title')
 .addTo(pinController);
 
 var blockTween = new TweenMax.to(".s", 5, {
-    x:0,
-    y:0,
+    x:7,
+    y:-3,
     rotation:90,
     delay:5,
-    scale:1,
+    scale:0.9,
     ease:Power4.easeOut
 });
+
+TweenMax.from(".w", 3, {
+    x:-102,
+    y:17,
+    scale:1,
+    delay:5,
+    ease:Power4.easeOut
+});
+
+TweenMax.to(".w", 3, {
+  x:8,
+  y:1,
+  scale:1,
+  delay:5,
+  ease:Power4.easeOut
+})
