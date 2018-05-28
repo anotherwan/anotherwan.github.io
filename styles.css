@@ -14,7 +14,7 @@ header {
 .header-container {
     width:0;
     height:0;
-    border-top: 250px solid #e55e86;
+    border-top: 250px solid #8ea1e5;
     border-right: 250px solid transparent;
     z-index: 0;
     position: fixed;
@@ -65,11 +65,13 @@ section {
     width: 200;
 }
 
+.down-arrow {
+    z-index: -1;
+}
+
 a {
     color: black;
     font-size: 30px;
-    /* display: block; */
-    /* left: 90px; */
     font-family: 'print_clearlyregular';
     text-decoration: none;
 }
@@ -79,19 +81,19 @@ a:hover {
 }
 
 a:focus {
-    /* color: #8ea1e5; */
-    color: #00c1bb;
+    color: #e55e86;
 }
 
 a.active, a#greetings-anchor.active, a#story-anchor.active, a#work-anchor.active, a#abilities-anchor.active, a#next-anchor.active {
-    /* color: #8ea1e5; */
-    color: #00c1bb;
+    color: #e55e86;
     font-size: 40px;
 }
 
 p {
     font-family: 'night_still_comesregular';
     z-index: 2;
+    padding: 20px;
+    margin: 0;
 }
 
 #greet-title {
@@ -102,31 +104,85 @@ p {
     padding-top: 10px;
 }
 
+.arrow-up {
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;    
+    border-bottom: 10px solid #e55e86;
+    margin: auto;
+}
+
 #p-container {
     font-family: sans-serif;
     text-align: center;
     margin: auto;
     width: 33%;
     font-size: 18px;
+    z-index: 1;
 }
 
-.s {
-    /* position: absolute; */
-    /* left:493px; */
-    /* top:1350px; */
+#summary-quote {
+    background-color: #e55e86;
 }
 
-.w {
-    /* position: absolute;
-    left: 488px;
-    top: 1384px; */
+p.typewriter {
+    color: #000;
+    background-color: #e55e86;
+    overflow: hidden;
+    border-right: 2px solid #000;
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: 
+        typing 5s steps(30, end),
+        blink-caret .5s step-end infinite;
+    font-family: 'night_still_comesregular';
+    z-index: 2;
+    padding: 20px;
 }
 
-/* 
-#greetings, #work, #abilities, #next {
-    font-family: 'violetteregular';
+/* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 75% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    5% { border-color: #000 }
+}
+
+#work {
+    flex-flow: column nowrap;
+}
+
+.dev-title, .abilities-title {
+    padding: 40px;
     font-size: 50px;
-    margin: auto;
-    text-align: center;
-    vertical-align: middle;
-} */
+}
+
+#abilities {
+    background-color: #00c1bb;
+    flex-flow: column;   
+    justify-content: center;
+    font-size: 24px;
+}
+
+.devicons {
+    flex-flow: column wrap;
+}
+
+h3 {
+    font-family: 'adamnormal';
+    margin: 10px;
+}
+
+.devicons {
+    flex-flow: row wrap;
+}
+
+i {
+    font-size: 50px;
+    color: #fffdfd;
+}
