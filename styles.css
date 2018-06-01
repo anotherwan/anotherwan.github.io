@@ -155,9 +155,10 @@ p.typewriter {
 
 #work {
     flex-flow: column nowrap;
+    background-color: #8ea1e5;
 }
 
-.dev-title, .abilities-title {
+.dev-title, .abilities-title, .next-title {
     padding: 40px;
     font-size: 50px;
 }
@@ -167,6 +168,13 @@ p.typewriter {
     flex-flow: column;   
     justify-content: center;
     font-size: 24px;
+}
+
+#next {
+    background-color: #ffd11c;
+    flex-flow: column;
+    justify-content: center;
+    font-size: 18px;
 }
 
 .devicons {
@@ -185,4 +193,5 @@ h3 {
 i {
     font-size: 50px;
     color: #fffdfd;
+    padding: 5px;
 }
