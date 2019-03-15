@@ -1,118 +1,83 @@
-var navController = new ScrollMagic.Controller({
-  globalSceneOptions: {
-    duration: $('section').height(),
-    triggerHook: .025,
-    reverse: true
-  }
-});
 
-var scenes = {
-  'greetings': {
-    'greetings': 'greetings-anchor'
+var buttonObject = {
+  width: 0,
+  height: 0,
+  x: 0,
+  y: 0,
+  centerX: function() {
+      return this.x + (this.width / 2);
   },
-  'story': {
-    'story': 'story-anchor'
+  centerY: function() {
+      return this.y + (this.height / 2);
   },
-  'work': {
-    'work': 'work-anchor'
+  halfWidth: function () {
+      return this.width / 2;
   },
-  'abilities': {
-    'abilities': 'abilities-anchor'
-  },
-  'next': {
-      'next': 'next-anchor'
+  halfHeight: function() {
+      return this.height / 2;
   }
+};
+var canvas = document.getElementById("myCanvas");
+var context = canvas.getContext("2d");
+var video = document.getElementById("myVideo");
+var button = Object.create(buttonObject);
+button.x = 0;
+button.y = 0;
+button.width = 50;
+button.height = 30;
+window.addEventListener("mousemove",onMouseMove,false);
+window.addEventListener("mousedown",onMouseDown,false);
+var clicked = false;
+var mouseX; 
+var mouseY;
+
+function onMouseDown (event) {
+  clicked = true;
+}
+function onMouseMove (event) {
+  mouseX = event.pageX - canvas.offsetLeft;
+  mouseY = event.pageY - canvas.offsetTop;
 }
 
-for(var key in scenes) {
-  if (!scenes.hasOwnProperty(key)) continue;
+main();
 
-  var obj = scenes[key];
+function main() {
+  window.setTimeout(main,33);
+  
+  context.clearRect(0,0,canvas.width,canvas.height);
+      context.fillStyle = "#999";
+      context.fillRect(button.x,button.y,button.width,button.height);
 
-  for (var prop in obj) {
-    if(!obj.hasOwnProperty(prop)) continue;
+  var vx = mouseX - button.centerX();                      
+  var vy = mouseY - button.centerY();
+  var buttonVX = 5;
+  
+  var combinedHalfWidths = 1 + button.halfWidth();
+  var combinedHalfHeights = 1 + button.halfHeight();
 
-    new ScrollMagic.Scene({ triggerElement: '#' + prop })
-        .setClassToggle('#' + obj[prop], 'active')
-        .addTo(navController);
-  }
-}
+  if(Math.abs(vx) < combinedHalfWidths) {
+      if(Math.abs(vy) < combinedHalfHeights) {
+          if(clicked) {
+              video.currentTime = 10;
+              video.play();
+              clicked = false;
+              // video.currentTime = 10;
+              // video.play();
 
-navController.scrollTo(function(target) {
-  TweenMax.to(window, 0.5, {
-    scrollTo : {
-      y : target,
-      autoKill : true
-    },
-    ease : Cubic.easeInOut
-  });
-
-});
-
-var anchor_nav = document.querySelector('.anchor-nav');
-
-anchor_nav.addEventListener('click', function(e) {
-  var target = e.target,
-      id     = target.getAttribute('href');
-
-  if(id !== null) {
-    if(id.length > 0) {
-      e.preventDefault();
-      navController.scrollTo(id);
-
-      if(window.history && window.history.pushState) {
-        history.pushState("", document.title, id);
+              // button.x += buttonVX;
+              // if(button.x > canvas.width - button.width) {
+              //     buttonVX = -5;
+              // }
+              // if(button.x < 0) {
+              //     buttonVX = 5;
+              // }
+              // clicked=false;
+          }
       }
-    }
   }
-});
-
-var pinController = new ScrollMagic.Controller();
-var containerScene = new ScrollMagic.Scene({
-  triggerElement: '#story'
-})
-.setTween(blockTween)
-// .addIndicators()
-.addTo(pinController);
-
-var scene1 = new ScrollMagic.Scene({
-    triggerElement: '#greetings',
-    duration: $(window).height() + 50,
-    triggerHook: 0.7,
-    reverse:true
-})
-.setPin('#greet-title')
-// .addIndicators()
-.addTo(pinController);
-
-var scene2 = new ScrollMagic.Scene({
-    triggerElement: '#story',
-    duration: 280
-})
-.setPin('#greet-title')
-.addTo(pinController);
-
-var blockTween = new TweenMax.to(".s", 5, {
-    x:7,
-    y:-3,
-    rotation:90,
-    delay:5,
-    scale:0.9,
-    ease:Power4.easeOut
-});
-
-TweenMax.from(".w", 3, {
-    x:-102,
-    y:17,
-    scale:1,
-    delay:5,
-    ease:Power4.easeOut
-});
-
-TweenMax.to(".w", 3, {
-  x:8,
-  y:1,
-  scale:1,
-  delay:5,
-  ease:Power4.easeOut
-})
+}
+// const playPromise = video.play();
+// if (playPromise !== null){
+//     playPromise.then(() => { video.play(); })
+//            .catch( error => { video.pause();});
+// }
